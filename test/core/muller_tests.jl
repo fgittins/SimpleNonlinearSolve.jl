@@ -29,11 +29,11 @@
         prob = NonlinearProblem{false}(f, u0)
         sol = solve(prob, SimpleMuller())
 
-        @test sol.u ≈ 2*π
+        @test sol.u ≈ 2 * π
     end
 
     @testset "Exponential-sine function" begin
-        f(u, p) = exp(-u)*sin(u)
+        f(u, p) = exp(-u) * sin(u)
 
         u0 = (-2.0, -3.0, -4.0)
         prob = NonlinearProblem{false}(f, u0)
@@ -41,7 +41,7 @@
 
         @test sol.u ≈ -π
 
-        u0 = (-1.0, 0.0, 1/2)
+        u0 = (-1.0, 0.0, 1 / 2)
         prob = NonlinearProblem{false}(f, u0)
         sol = solve(prob, SimpleMuller())
 
